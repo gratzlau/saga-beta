@@ -1,0 +1,171 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.saga</groupId>
+	<artifactId>saga</artifactId>
+	<version>1.0.1-BETA</version>
+	<packaging>pom</packaging>
+
+	<name>saga</name>
+	<url>http://maven.apache.org</url>
+	
+	
+	<modules>
+		<module>saga-common</module>
+		<!--<module>saga-eracode</module>
+		<module>saga-solar</module>
+		<module>saga-solar2</module> 
+		<module>saga-solar-core</module>
+		<module>saga-solar-dep</module>
+		<module>saga-solar-module</module>
+		<module>saga-solar-module-solar2</module>
+		<module>saga-solar-module-solar2over3</module>
+		<module>saga-xfunds-base</module>
+		<module>saga-xfunds-common</module>
+		<module>saga-xfunds-common-booking</module>
+		<module>saga-xfunds-swap</module>-->
+		<!-- <module>saga-irsccs</module> -->
+	</modules>
+	
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk-version>1.8</jdk-version>  
+    	<junit-version>4.12</junit-version>
+    	
+ 		<!-- 
+    	<spring-version>3.1.2.RELEASE</spring-version>   	
+    	<spring-base-version>3.1.2.RELEASE</spring-base-version>   	
+	
+    	<hibernate-version>3.6.10.Final</hibernate-version>
+    	<spring-data-jpa-version>1.6.2.RELEASE</spring-data-jpa-version>
+    	<struts2-version>2.3.16</struts2-version>
+    	
+    	<jtds-version>1.2.7</jtds-version>
+    	
+    	<proxool-version>0.9.1</proxool-version> 
+    	<log4j-version>1.2.17</log4j-version> 
+    	<slf4j-version>1.7.5</slf4j-version>
+    	-->
+    	
+    	
+    	
+    	<oracle-version>10.2.0.4.0</oracle-version>
+    	
+    	<servlet-version>3.0.1</servlet-version>
+    	
+    	<json-lib-version>2.4</json-lib-version>  
+    	
+    	
+    	
+    	
+    	<aspectj-version>1.7.3</aspectj-version> 
+    	<cglib-version>2.2.2</cglib-version><asm-version>3.3.1</asm-version>
+    	
+    	
+    	<cxf-version>2.7.5</cxf-version> 
+    	<commons-attributes-version>2.1</commons-attributes-version>
+    	<commons-beanutils-version>1.8.3</commons-beanutils-version>
+    	<commons-codec-version>1.6</commons-codec-version>
+    	<commons-collections-version>3.2.1</commons-collections-version>
+    	<commons-digester-version>1.8</commons-digester-version>
+    	<commons-discovery-version>0.2</commons-discovery-version>
+    	<commons-httpclient-version>3.1</commons-httpclient-version>
+    	<commons-jexl-version>2.1.1</commons-jexl-version>
+    	<commons-validator-version>1.4.0</commons-validator-version>
+    	<commons-dbcp-version>1.4</commons-dbcp-version>
+    	<commons-fileupload-version>1.3.1</commons-fileupload-version>
+    	<commons-lang-version>2.6</commons-lang-version>
+    	<commons-net-version>2.0</commons-net-version>
+    	<commons-csv-version>1.2</commons-csv-version>
+    	<fastjson-version>1.1.23</fastjson-version>
+    	<guava-version>19.0</guava-version>
+    	<ini4j-version>0.5.4</ini4j-version>
+    	<itextpdf-version>5.4.4</itextpdf-version>
+    	<jgroups-version>2.9.0.GA</jgroups-version>
+    	<jsch-version>0.1.53</jsch-version>
+    	<logback-classic-version>1.1.3</logback-classic-version>
+    	<mvel2-version>2.1.3.Final</mvel2-version>
+    	<netty-version>3.2.7.Final</netty-version>
+    	<p6spy-version>1.3</p6spy-version>
+    	<poi-version>3.9</poi-version>
+    	<xml-apis-version>1.4.01</xml-apis-version>
+    	<xmlpull-version>1.1.3.1</xmlpull-version>
+    	<xmlworker-version>5.4.1</xmlworker-version>
+    	<xpp3_min-version>1.1.4c</xpp3_min-version>
+    	<xstream-version>1.4.7</xstream-version>
+    	<ehcache-version>1.6.2</ehcache-version>
+    	<ehcache-jgroupsreplication-version>1.3</ehcache-jgroupsreplication-version>
+    	<ecj-version>3.5.1</ecj-version>
+    	<FastInfoset-version>1.2.12</FastInfoset-version>
+    	<itext-version>2.1.7</itext-version>
+    	<istack-commons-runtime-version>2.17</istack-commons-runtime-version>
+    	<geronimo-javamail_1.4_spec-version>1.7.1</geronimo-javamail_1.4_spec-version>
+    	<geronimo-spec-servlet-version>1.0-M1</geronimo-spec-servlet-version>
+    	<jaxb-version>2.2.7</jaxb-version>
+    	<slf4j-version>1.7.2</slf4j-version>
+    	<jedis-version>2.4.1</jedis-version>
+    	<kryo-version>2.21</kryo-version>
+    	<mina-version>2.0.2</mina-version>
+    	<neethi-version>3.0.2</neethi-version>
+    	<opencsv-version>2.4</opencsv-version>
+    	<woodstox-core-asl-version>4.2.0</woodstox-core-asl-version>
+    	<wsdl4j-version>1.6.3</wsdl4j-version>
+    	<xerces-version>2.11.0</xerces-version>
+    	<xml-resolver-version>1.2</xml-resolver-version>
+    	<xmlschema-core-version>2.0.3</xmlschema-core-version>
+    	<xwork-version>2.0.4</xwork-version>
+    	
+    	
+    	<log4j-version>1.2.17</log4j-version> 
+
+    	
+    	
+    	
+	</properties>
+	
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+					<include>**/*.xsd</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+					<include>**/*.xsd</include>
+					<include>**/*.handlers</include>
+					<include>**/*.schemas</include>
+					<include>**/*.ftl</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+	
+
+
+	
+	
+	
+
+
+</project>
