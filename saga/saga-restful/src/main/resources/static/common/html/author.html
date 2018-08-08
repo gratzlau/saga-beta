@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>复核</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+</head>
+<body>
+<script>
+	erajs.onReady(function(){
+	
+		setTimeout(function(){$("#loginId")[0].focus();},10);
+		var actionUrl=$.cookie('authorFormActionUrl');
+		var tableGridId=$.cookie('refreTableGridId');
+		if(tableGridId==undefined||tableGridId==null)
+		{
+			tableGridId="";
+		}
+		$("#authorForm").attr('action',actionUrl);
+		var saveBtn='<div id="authorSubmitBut" xtype="button" class="middleBtn" langid ="author.form.submit" iconCls="icon-save" custom-options="btnType:\'submit\',beforeExecute:beforeAuthor,refDgId:\''+tableGridId+'\'"></div>';
+		var cancelBtn=$("#btnDiv").html();
+		$("#btnDiv").html(saveBtn+cancelBtn);
+		//delete cookie
+		$.cookie('authorFormActionUrl',null,{expires:-1});
+		$.cookie('refreTableGridId',null,{expires:-1});
+	});
+</script>
+<form  name="authorForm" id="authorForm" action='../../addMarginAmtAllot.action' class="form-css" >
+    <div xtype="layout">
+        <div data-options="region:'center',border:false"  class="form-box">
+            <ul class="content_ul">
+                <li class="title120">
+                	<span class="require">*</span>
+                	<span class="LANGS" langid="user.form.loginId">用户名</span>:
+                </li>
+                <li class="input180">
+                    <input type="text" name="user.loginId" id="loginId" class="input-css"/>
+                </li>
+            </ul>
+            
+            <ul class="content_ul"> 
+                <li class="title120">
+                	<span class="require">*</span>
+                	<span class="LANGS" langid="user.form.password">密码</span>:
+                </li>
+                <li class="input180">
+                    <input type="password"  name="user.password" id="password" class="input-css"/>
+                </li>
+            </ul>
+        </div>
+        <div region="south" border="false" class="form-foot-btns" id="btnDiv">
+            <div id="cancelBtn" xtype="button" class="middleBtn" iconCls="icon-cancel" langid ='author.form.cancel' custom-options="btnType:'cancel'" style="position:relative;left:40px"></div> 
+        </div>
+    </div>
+</form>
+</body>
+</html>

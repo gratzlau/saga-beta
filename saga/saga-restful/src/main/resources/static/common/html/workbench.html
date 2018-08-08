@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>增值应用管理</title>
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="../../base/css/currency.css"> 
+<script type="text/javascript" src="../../common/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../common/js/BaseFun.js"></script>
+<script type="text/javascript" src="../../common/js/workbench.js"></script>
+<script>
+	erajs.onReady(function(){
+	
+		initPage();
+	 	
+		//$("#bankIdQuery").val((window.parent.document.getElementById("bankspan").innerHTML).split("-")[0]);
+		//var sysDate = (window.parent.document.getElementById("timerSpan").innerHTML).split(" ")[0];
+		//erajs.getCmp("plateDateStart").setValue(sysDate);
+		//erajs.getCmp("plateDateEnd").setValue(dateStrAddOneDay(sysDate));
+	});
+</script>
+</head>
+<body xtype="layout">
+	<div class="search_div" data-options="region:'north',height:42,border:true" style="display:none"  >
+		<form target="_top" class="query-form" method="POST" name="workBenchListForm">
+			<input type="hidden" id="status" name="status"  value="0"/>
+			<input xtype="datebox" name="expDate" id="expDate" style="width:120px" data-options="editable:false,submitFormat:'Ymd',value:dateStrSubOneDay()" />
+		</form>
+	</div>
+	<div data-options="region:'center',border:false" class="paddingTop5">
+		<table id="workBenchGrid" xtype="datagrid"
+			data-options="
+				showTip: true,
+ 				singleSelect:true,
+ 				url:'../../query.action?queryId=trade.selectIncreTradeList',
+ 				toolbar:'#tbutton'
+ 				"
+			custom-options="
+				identifyField : 'increId',
+				queryFormName : 'workBenchListForm'
+				">
+			<thead>
+				<tr>
+					<th data-options="field:'increId',width:'8%',align:'center'">
+						<span class="LANGS" langid="increTrade.fields.increId">增值编号</span>
+					</th>
+					<th data-options="field:'increWeight',width:'10%',align:'center',formatter:formatWeight">
+						<span class="LANGS" langid="increTrade.fields.increWeight">增值运作重量(克)</span>
+					</th>
+					<th data-options="field:'increRate',width:'10%',align:'center',formatter:formatAmt">
+						<span class="LANGS" langid="increTrade.fields.increRate">增值收益率(%)</span>
+					</th>
+					<th data-options="field:'fixPrice',width:'8%',align:'center',formatter:formatAmt">
+						<span class="LANGS" langid="increTrade.fields.fixPrice">定盘价</span>
+					</th>
+					<th data-options="field:'beginDate',width:'10%',align:'center',formatter:formatDate">
+						<span class="LANGS" langid="increTrade.fields.beginDate">开始日期</span>
+					</th>
+					<th data-options="field:'expDate',width:'10%',align:'center',formatter:formatDate">
+						<span class="LANGS" langid="increTrade.fields.expDate"><b>到期日期</b></span>
+					</th>
+					<!--
+					<th data-options="field:'lastPayDate',width:'10%',align:'center'">
+						<span class="LANGS" langid="increTrade.fields.lastPayDate">上一收息日</span>
+					</th>
+					<th data-options="field:'nextPayDate',width:'10%',align:'center'">
+						<span class="LANGS" langid="increTrade.fields.nextPayDate">下一收息日</span>
+					</th>
+					-->
+					<th data-options="field:'plateDate',width:'15%',align:'center'">
+						<span class="LANGS" langid="increTrade.fields.plateDate">交易时间</span>
+					</th>
+					<th data-options="field:'rableRest',width:'8%',align:'center',formatter:formatAmt">
+						<span class="LANGS" langid="increTrade.fields.rableRest">应收收息</span>
+					</th>
+					<th data-options="field:'recRest',width:'8%',align:'center',formatter:formatAmt">
+						<span class="LANGS" langid="increTrade.fields.recRest">已收利息</span>
+					</th>
+					<th data-options="field:'statusName',width:'10%',align:'center'">
+						<span class="LANGS" langid="increTrade.fields.statusName">状态</span>
+					</th>
+					<th data-options="field:'increTypeName',width:'10%',align:'center'">
+						<span class="LANGS" langid="increTrade.fields.increTypeName">类型</span>
+					</th>
+
+				</tr>
+			</thead>
+		</table>
+		<div id="tbutton" style="padding:5px;"><b>即将到期 ( 增值应用、黄金划拨 )</b>
+		</div>
+</body>
+</html>
